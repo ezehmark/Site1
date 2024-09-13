@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <style>
+        .topbox{background-color: #018bb2;filter:blur(1px);z-index:38;height:47px;width:100%;position:fixed;right:10px;left:0; display:flex;top:0}
+       h1{z-index:40;color:white;top:5px;margin-top:10px; display:block;font-family:lexend deca;font-variant:small-caps; text-decohration:1px underline #4fa83d;position:fixed;top:-4px;text-shadow:1px 1px 1px black}
+      
+      .top2{height:200px;width:100%;display:flex;position:relative; background-color: #018bb2;;font-size:18px; box-shadow:-1px 2px 6px black;top:180px; justify-conhtent:center; aljign-items:center;border-radius:20px} 
+      .top2title{display:block;left:70px;position:absolute;font-size:25px;white-space:nowrap;font-weight:bold;top:0px; color:#84de02}
+      .accounts{left:20px;font-size:18px;font-weight:bold;display:flex;position:absolute;top:50px;color:#f5e9d3}
+      
+      h2{color:green;position:absolute;display:flex;top:50px}
+      
+      .hr{justify-content: center;align-items:center;height:5px;width:100%;top:200px;font-size:20px; position:relative;font-weight:bold; background-color:red;text-align:center}
+  
+      
+      
+      
+      
+       *{box-sizing:border-box}
+      body{justify-contehnt:center;align-itemus:center;heighjt:100vh;displjay:flex; background-color:#f0f0f0}
+        form{margin-top:250px;margin-left:20px;display:block;background-color:white;width:300px; padding:20px;border-radius:15px;box-shadow:0px 4px 8px rgba(0, 0, 0, 0.1)}
+        label{margin-bottom:5px;font-weight:bold}
+       input{height:40px;margin-bottom:20px;width:100%;border-radius:5px;border:1px solid #ccc}   
+       
+       .datepin{display:flex;justify-content:space-between;gap:10px}
+       #button{background-color:#84de02;font-size:15px}
+       input:focus{outline:none;border:1px solid #84de02}
+       h3{text-align:center;font-size:25px}
+       
+       
+       .alertB{width:200px;height:100px; background-color:red;color:white;left:80px;top:200px;border-radius:15px;position:fixed;text-align:center; display:flex;justify-content:center;align-items:center;opacity:0; visibility:hidden;transition: opacity 2s ease}
+       
+       .showA{opacity:1; visibility:visible}
+    </style>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+</head>
+<body>
+    
+    <div class ="topbox"></div>
+    <h1>DATADAYS</h1>
+    
+   <h2>For quick funding, <br>transfer to the following dedicated accounts.</h2>
+    
+  <div class ="top2">
+        <p class ="top2title">Dedicated Accounts</p><br><br><br>
+       <p class ="accounts">Access Bank: 123456789<br>
+       <br>Wema Bank: 123456789<br><br>
+       Moniepoint MFB: 123456789<br>
+     
+    </div>  
+    
+    <div class="hr"><p class="or">or</p></div>
+    <hr>
+    <form><h3>Card Payment</h3>
+        <label for="number">Card Number</label><br>
+        <input name="cardnumber" id="number" type="number" placeholder="1234567890" maxlength="19">
+        <label for="name">Full name</label>
+        <input name="full name"id="name" type="text" placeholder ="Ezeh Mark">
+        <div class="datepin">
+            
+            <div class="expiry"><label for="expiry">Expiry Date</label>
+            <input type="number" maxlength="5" placeholder="12/27"></div>
+            <div class="cvv">
+            <label for="cvv">CVV</label>
+            <input type="number" maxlength="3"></div></div>
+            <br><br>
+            <input id="button" type="submit" value="submit" onclick="showAlert()">
+        
+    </form>
+    <div class="alertB"></div>
+</body>
+
+
+<script>
+    function showAlert(){
+    event.preventDefault();
+        var showbox = document.querySelector('.alertB');
+        showbox.textContent = "Card payment gateway is being built by Mark";
+        
+        showbox.classList.add('showA');
+        
+        setTimeout(()=>{
+            showbox.classList.remove('showA');
+        }, 5000)
+    }
+    
+</script>
+</html>
